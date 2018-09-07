@@ -1,0 +1,32 @@
+<!-- home page with login and signup functions -->
+{% extends "header.html" %}
+{% block content %}
+
+
+    <div id ="login">
+            <li><a href="{{url_for ('login')}}">LOGIN</a></li>
+            <li><a href="">SIGNUP</a></li>
+    </div>
+        
+    <div id = "content">    
+            <P>WELCOME TO MOUNT OLIVES CHURCH MANAGEMENT SYSTEM.</P>
+            <P>TO ACCESS THIS APPLICATION, PLEASE LOGIN</P>   
+    </div>
+
+
+<footer>
+    <p>
+        <spam class = "address">
+            <p>Mt. Olives</p>
+            <p>Location: Naalya</p>
+            <p>tel: 0703384258</p>
+            <p>email: mtolives@gmail.com</p>
+        </spam>
+
+
+    </p>
+</footer>
+
+</body>
+</html>
+{% endblock %}

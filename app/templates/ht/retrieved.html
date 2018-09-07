@@ -1,0 +1,100 @@
+{% extends "header.html" %}
+{% block content %}
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    
+    padding: 12px 20px 12px 40px;
+    border: 1px solid rgb(41, 26, 26);
+    margin-bottom: 12px;
+  }
+  
+  #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+  }
+  
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  #myTable tr {
+    border-bottom: 1px solidrgb(36, 20, 20);
+    background-color: #0e0909;
+    color: white;
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+    background-color: #3f1f1f;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2><center>ALL CHURCH MEMBERS</center></h2>
+  <header>
+             
+    <ul>
+      <li><a href="{{url_for ('register')}}">REGISTER NEW MEMBER</a></li>
+      <li><a href="{{url_for ('my_fun')}}">VIEW INDUVIDUAL PROFILES</a></li>
+      
+    
+    </ul>           
+
+  
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Type here for a quick search through the members list" title="Type in a name">
+  
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:20%;">user_id</th>
+      <th style="width:20%;">username</th>
+      <th style="width:20%;">password</th>
+      <th style="width:40%;">picture</th>
+    </tr>
+    {% for item in data %}
+ 
+    <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td><img src="{{url_for('static', filename='images/deb.jpg')}}" alt="deb" style="width:450px;height:200px;"/></td>
+        
+    </tr>
+    
+{% endfor %}
+  </table>
+  
+  <script>
+  function myFunction() {
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i];
+      if (td) {
+        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+  </script>
+  
+  </body>
+  </html>
+  {% endblock %}

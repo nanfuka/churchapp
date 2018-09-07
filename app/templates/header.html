@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CHURCH MANAGEMENT SYSTEM</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/general.css') }}"> 
+</head>
+<body>
+
+    <header>
+      <div class="container">
+        <h2><center>MOUNT-OLIVES CHURCH APP</center></h2>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{url_for ('home')}}">HOME</a></li>
+            <li><a href="">ABOUT</a></li>
+            
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
+

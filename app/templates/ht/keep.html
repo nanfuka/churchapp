@@ -1,0 +1,153 @@
+{% extends "header.html" %}
+{% block content %}
+
+<form action = "{{url_for ('alllusernames')}}" method = "POST">
+    
+    <input name="username" list="anrede" />
+    <datalist id="anrede"></datalist>
+    <input type="submit"  value="search" />
+     </form>
+    
+    <p id="k">C:\Users\Emmanuel\Desktop\Camera Roll\{{dat[1]}}</p>
+    <li><a href=" C:\Users\Emmanuel\Desktop\Camera Roll\{{dat[1]}}">hh</a></li>
+    <img src="C:\Users\Emmanuel\Desktop\Camera Roll\"{{dat[1]}}".jpg" alt="Italian Trulli">
+    <img src="images/deb.jpg" alt="Italian Trulli">
+    <p id="p1">{{data}}</p>
+
+    <div id="content">
+        <img src="{{ imageLink }}"/>
+        </div>
+
+
+    </form>
+    <script>
+
+            var content = new Vue({
+            el: '#content',
+            data: {
+                imageLink: 'C:\Users\Emmanuel\Desktop\Camera Roll\deb.jpg'
+            }
+        });
+
+        
+    var mycars = {{ data|safe }}
+   
+    alert(lest)
+    var list = document.getElementById('anrede');
+    
+    mycars.forEach(function(item){
+       var option = document.createElement('option');
+       option.value = item;
+       list.appendChild(option);
+    });
+    </script>
+    </script>
+    {% endblock %}    
+    
+
+
+    table, th, td {
+        border: 1px solid rgb(230, 221, 221);
+     }
+     table {
+        width: 100%;
+    }
+    
+    th {
+        height: 50px;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image:"images/joaki.jpg";
+    }
+    h2{
+        color: white;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #e6cccc;
+    }
+    
+    li {
+        float: left;
+        margin: 0px;
+        padding: 0;
+        margin-left: 50px;
+    }
+    
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 30px;
+        text-decoration: none;
+    }
+    table{
+        
+    }
+    
+    li a:hover {
+        background-color: #ebe5e5;
+    }
+    
+    /* Style the header */
+    header {
+        background-color: #666;
+        padding: 20px;
+        text-align: center;
+        font-size: 15px;
+        color: white;
+    }
+    
+    #menu {
+        background-color: #080808;
+        padding: 20px;
+        text-align: center;
+        font-size: 150%;
+        color: black;
+        font-display: bold;
+    }
+    
+    
+    
+    /* Clear floats after the columns */
+    section:after {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+        font-display: bold;
+    }
+    
+    
+    
+    footer {
+        background-color: #666;
+        padding: 20px;
+        text-align: center;
+        font-size: 100%;
+        color: white;
+        font-display: bold;
+    }
+    td, th {
+        border:1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(even){
+        background-color: #251e1e;
+    }
+    
+    /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+    @media (max-width: 600px) {
+        nav, article {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    background ="{{url_for('static', filename='images/deb.jpg')}}"

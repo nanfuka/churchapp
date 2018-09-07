@@ -1,0 +1,25 @@
+<form method="POST" action="/indexa">
+    
+    <input name="username" list="anrede" />
+    <datalist id="anrede"></datalist>
+    <input type="submit"  value="search" />
+     </form>
+     <img src="{{ user_image }}" alt="User Image">
+    
+    
+    <p id="p1">{{data}}</p>
+    </form>
+    <script>
+        
+    var mycars = {{ data|safe }}
+    var list = document.getElementById('anrede');
+    
+    mycars.forEach(function(item){
+       var option = document.createElement('option');
+       option.value = item;
+       list.appendChild(option);
+    });
+    </script>
+    </script>
+    
+    

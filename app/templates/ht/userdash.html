@@ -1,0 +1,31 @@
+{% extends "header.html" %}
+{% block content %}
+                      
+<section>
+        <header>
+             
+            <ul>
+                <li><a href="{{url_for ('retrieve')}}">MEMBERSHIP</a></li>
+                <li><a href="#view">CABINET</a></li>
+                
+                <li><a href="#view">CHURCH FAMILIES</a></li>
+                <li><a href="#view">FELLOWSHIPS</a></li>
+                <li><a href="#view">REPORTS</a></li>
+                <li><a href="#view">PLANS</a></li>
+            
+            </ul>           
+        </header>
+    <div id ="login">
+        
+        <img src="{{url_for('static', filename='images/SDAlogo.jpg')}}" alt="SDA church logo" style="width:450px;height:200px;"/>
+        <body background ="{{url_for('static', filename='images/joaki.jpg')}}" />
+</div>
+</section>
+
+<footer>
+    <button type="button">Click here to see our church album</button>
+</footer>
+
+</body>
+</html>
+{% endblock %}

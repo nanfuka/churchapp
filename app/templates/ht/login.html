@@ -1,0 +1,37 @@
+{% extends "header.html" %}
+{% block content %}
+
+<section>
+    <div id ="login">
+        <P>LOGIN FORM</P>
+        
+            Username:<br>
+            <input type="text" name="firstname"required><br>
+            Password:<br>
+            <input type="text" name="password" required><br><br>
+            <a href="{{url_for ('userdash')}}"><input type="submit" value="Login"></a>
+ 
+        </form>
+</div>
+</section>
+
+<footer>
+    <p>
+        <spam class = "address">
+            <p>Andela</p>
+            <p>Location: Kamwookya</p>
+            <p>tel: 0703384258</p>
+        </spam>
+
+
+
+        <spam class = "designer">
+            designed by Deb
+            tel: 0703384258
+        </spam>
+    </p>
+</footer>
+
+</body>
+</html>
+{% endblock %}
